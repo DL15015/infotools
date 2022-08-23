@@ -60,9 +60,11 @@ def getOverviewData(url):
     }
     """ % (preDayTimeStamp, pre8HTimeStamp)
     data = findData(url, body)
+    print(data)
     dic = json.loads(data)
 
     tvl = 0
+    print(dic)
     for i in range(len(dic['data']['pools'])):
         totalValueLockedUSD = float(dic['data']['pools'][i]["totalValueLockedUSD"])
         tvl += totalValueLockedUSD
@@ -305,6 +307,7 @@ if __name__ == "__main__":
     url = input("url:")
     if not url:
         url = "http://16.162.255.226:8000/subgraphs/name/klein/unstable"
+        # url = "http://18.167.108.129:8000/subgraphs/name/klein/unstable"
     tvl, vol, tokenDict = getOverviewData(url)
     print("Overview:")
     print("TVL:", tvl)
