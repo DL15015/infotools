@@ -306,8 +306,8 @@ def getChange(cur, pre):
 if __name__ == "__main__":
     url = input("url:")
     if not url:
-        url = "http://16.162.255.226:8000/subgraphs/name/klein/unstable"
-        # url = "http://18.167.108.129:8000/subgraphs/name/klein/unstable"
+        # url = "http://16.162.255.226:8000/subgraphs/name/klein/unstable"
+        url = "http://18.167.108.129:8000/subgraphs/name/klein/unstable"
     tvl, vol, tokenDict = getOverviewData(url)
     print("Overview:")
     print("TVL:", tvl)
